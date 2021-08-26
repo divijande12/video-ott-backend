@@ -63,7 +63,7 @@ initial();
 require("./routes/auth.routes")(app);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to PoPFlix App" });
+  res.json({ message: "Welcome to PoPFlix App !!!!" });
 });
 
 app.use("/api/videos", require("./routes/videos.routes"));
