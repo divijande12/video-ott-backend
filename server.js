@@ -70,7 +70,6 @@ app.use("/api/videos", require("./routes/videos.routes"));
 app.use("/api/comments", require("./routes/comments.routes"));
 app.use("/api/like", require("./routes/likes.routes"));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+const PORT = app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}.`);
 });
