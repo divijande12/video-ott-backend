@@ -96,4 +96,17 @@ route.put("/:id", (req, res) => {
     });
 });
 
+route.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  Videos.findByIdAndRemove(id)
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({ message: `Cannot delete data of ${id}` });
+      } else res.send({ message: `deleted successfully!` });
+    })
+    .catch((err) => {
+      res.status(500).send({ message: err || `Some error occured` });
+    });
+});
+
 module.exports = route;
